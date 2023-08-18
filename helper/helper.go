@@ -1,41 +1,46 @@
 package helper
 
 import (
-	
 	"fmt"
-	"strings"
+	// redefined the imported string package name as s
+	s "strings"
 )
 
 // Convert the given string to a Upper case
-func ToUpperCase(str string){
-	fmt.Println(strings.ToUpper(str))
+func ToUpperCase(str string) {
+	fmt.Println(s.ToUpper(str))
 }
 
 // Convert the given string to a lower case
-func ToLowerCase(str string){
-	fmt.Println(strings.ToLower(str))
+func ToLowerCase(str string) {
+	fmt.Println(s.ToLower(str))
 }
 
 // String Search functions
 
 // Prefix means starts with a particular string
-func ToCheckHasPrefix(str string , check string){
+func ToCheckHasPrefix(str string, check string) {
 	// HasPrefix( mainString , subString ) , checks if main string starts with the subString
-	status := strings.HasPrefix(str , check)
-	if status{
-		fmt.Printf("%v is a prefix of %v\n",check , str)
-	}else{
-		fmt.Printf("%v is a not prefix of %v\n",check , str)
+	status := s.HasPrefix(str, check)
+	if status {
+		fmt.Printf("%v is a prefix of %v\n", check, str)
+	} else {
+		fmt.Printf("%v is a not prefix of %v\n", check, str)
 	}
 }
 
 // Suffix means ends with a particular string
-func ToCheckHasSuffix(str string , check string){
+func ToCheckHasSuffix(str string, check string) {
 	// HasSuffix( mainString , subString ) , checks if main string ends with the subString
-	status := strings.HasSuffix(str , check)
-	if status{
-		fmt.Printf("%v is a suffix of %v\n",check , str)
-	}else{
-		fmt.Printf("%v is a not suffix of %v\n",check , str)
+	status := s.HasSuffix(str, check)
+	if status {
+		fmt.Printf("%v is a suffix of %v\n", check, str)
+	} else {
+		fmt.Printf("%v is a not suffix of %v\n", check, str)
 	}
+}
+
+// Index(str , subStr) returns the index of the particular substring
+func ToCheckIndexOfElement(str string, subStr string) int {
+	return s.Index(str, subStr)
 }
